@@ -2,13 +2,25 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import s from './RegisterView.module.css';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 
 export default function RegisterView () {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const classes = useStyles();
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -35,21 +47,28 @@ export default function RegisterView () {
   }
 
   return (
-    <div>
+    <div className={s.container}>
       <h1 className={s.title}>Registration page</h1>
-      <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <label className={s.label}>
-          Name
-          <input type='text' name='name' value={name} onChange={handleChange}/>
-        </label>
-        <label className={s.label}>
-          Email
-          <input type='email' name='email' value={email} onChange={handleChange}/>
-        </label>
-        <label className={s.label}>
-          <input type='password' name='password' value={password} onChange={handleChange} />
-        </label>
-        <Button type='submit' variant="contained" color="primary">
+      <form onSubmit={handleSubmit} className={classes.root} autoComplete="off">
+        <TextField label="Name"
+                   variant="filled"
+                   type='text'
+                   name='name'
+                   value={name}
+                   onChange={handleChange} />
+        <TextField  label="Email"
+                    variant="filled"
+                    type='email'
+                    name='email'
+                    value={email}
+                    onChange={handleChange} />
+        <TextField  label="Password"
+                    variant="filled"
+                    type='password'
+                    name='password'
+                    value={password}
+                    onChange={handleChange} />
+        <Button type='submit' variant="contained" color="primary"  className={classes.root}>
           Register
         </Button>
       </form>

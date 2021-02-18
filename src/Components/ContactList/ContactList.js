@@ -19,7 +19,7 @@ export default function ContactList() {
       {contacts.map(({ id, name, number }) => (
         <li key={id} className={s.item}>
           &#128578; {name}: {number}
-          <button onClick={() => handleRemoveContact(id)}>Delete</button>
+          <button onClick={() => handleRemoveContact(id)} className={s.btn}>Delete</button>
         </li>
       ))}
     </ul>

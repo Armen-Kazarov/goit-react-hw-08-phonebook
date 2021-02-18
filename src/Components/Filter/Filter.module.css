@@ -3,16 +3,12 @@
   flex-wrap: wrap;
   flex-direction: column;
   width: 400px;
-  margin-left: 10px;
+  margin: 0 auto;
 }
 
-label {
+.inputFilterTitle {
   font-size: 20px;
   margin-bottom: 10px;
-}
-
-.inputFilter {
-  width: 50%;
-  padding: 4px;
-  outline: none;
+  color: #3a76ef;
+  margin: 0 auto;
 }

@@ -3,9 +3,23 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  margin: 0 auto;
+  background-color: #3a76ef;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
+  color: #fff;
+}
+
+.btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.btn:active {
+  color: #FF0009;
 }

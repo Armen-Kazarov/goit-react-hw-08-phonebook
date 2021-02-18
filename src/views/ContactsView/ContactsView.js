@@ -13,14 +13,12 @@ export default function ContactsView(params) {
   useEffect(() => dispatch(authOperations.fetchCurrentUser()), [dispatch]);
 
   return (
-    <>
-      <div style={s.barStyles}>
+      <div>
         <ContactForm />
         <ContactList />
         <Filter />
 
         {isLoadingContacts && <Loader/>}
       </div>
-    </>
   );
 }

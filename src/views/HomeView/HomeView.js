@@ -2,11 +2,11 @@ import s from "./HomeView.module.css";
 import PhoneBookImg from "images/phonebook.png";
 
 const HomeView = () => (
-  <div style={s.container}>
-    <h1 style={s.title}>
+  <div >
+    <h1 className={s.title}>
       Welcome to phonebook
-      <img src={PhoneBookImg} alt='phonebook' className={s.img} />
     </h1>
+    <img src={PhoneBookImg} alt='phonebook' className={s.image} width="50"/>
   </div>
 );
 

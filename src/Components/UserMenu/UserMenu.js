@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
 import defaultAvatar from '../../images/default-avatar.jpg';
+import s from './userMenu.module.css';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -8,10 +9,10 @@ const UserMenu = () => {
   const avatar = defaultAvatar;
 
   return (
-    <div className='container'>
-      <img src={avatar} alt='default avatar' width='32' className={s.avatar}/>
-      <span className={s.name}>Welcome, {name}</span>
-      <button type='button' onClick={() => dispatch(authOperations.logOut())}>Log out</button>
+    <div className={s.container}>
+      <img src={avatar} alt='default avatar' width='32' />
+      <span >Welcome, {name}</span>
+      <button type='button' className={s.btn} onClick={() => dispatch(authOperations.logOut())}>Log out</button>
     </div>
   )
 }
